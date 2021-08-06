@@ -1,6 +1,9 @@
 import React from "react";
+import { Route } from "react-router-dom";
 // import { useState, useEffect } from 'react';
 import AppBar from '../AppBar/AppBar';
+import HomeView from "../../views/HomeView";
+import MoviesView from "../../views/MoviesView";
 // import Searchbar from '../Searchbar/Searchbar';
 // import FetchSearch from '../../FetchSearch';
 // import ImageGallery from '../ImageGallery/ImageGallery';
@@ -14,6 +17,14 @@ export default function App () {
   return (
     <>
     <AppBar />
+
+    <Route path="/" exact>
+      <HomeView />
+    </Route>
+
+    <Route path="/movies">
+      <MoviesView />
+    </Route>
     </>
   )
 };

@@ -1,0 +1,15 @@
+nav {
+    text-align: left;
+    padding: 15px;
+}
+
+.nav-link {
+    margin-right: 10px;
+    color: #000000;
+
+    text-decoration: none;
+}
+
+.nav-link__active {
+    color: brown;
+}
