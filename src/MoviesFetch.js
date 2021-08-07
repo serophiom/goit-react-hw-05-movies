@@ -1,4 +1,15 @@
-import PropTypes from 'prop-types';
+const ApiKey = 'e563734a6bbd21067790abd0a9925d86';
+
+async function fetchWithErrorHandling () {
+    const response = await fetch (url = '', config);
+    return response.ok
+}
+
+
+
+
+
+// import PropTypes from 'prop-types';
 
 // const ApiKey = '21951044-669b58be8946ea9fe70fb579e';
 
