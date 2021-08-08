@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import { useState, useEffect } from 'react';
-import * as moviesFetch from '../moviesFetch';
+import * as moviesFetch from '../../moviesFetch';
 
 export default function MoviesCast() {
     const [actors, setActors] = useState(null);

@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import * as moviesFetch from '../moviesFetch';
-import '../styles.css';
+import * as moviesFetch from '../../moviesFetch';
+import '../../styles.css';
 
 export default function HomeView() {
-    // const {url} = useRouteMatch();
     const [movies, setMovies] = useState(null);
 
     useEffect(() => {

@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import { useState, useEffect } from 'react';
-import * as moviesFetch from '../moviesFetch';
+import * as moviesFetch from '../../moviesFetch';
 
 export default function MoviesCast() {
     const [reviews, setReviews] = useState(null);
@@ -11,7 +11,6 @@ export default function MoviesCast() {
         moviesFetch.fetchMoviesReviews(moviesId).then(response => setReviews(response.results)); 
     }, [moviesId])
 
-    console.log(reviews);
     return (
         <div>
             <ul className="reviews-card">

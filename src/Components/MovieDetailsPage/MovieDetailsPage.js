@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useRouteMatch, Route } from "react-router-dom";
-import * as moviesFetch from '../moviesFetch';
-import MoviesCast from './MoviesCast';
-import MoviesReviews from './MoviesReviews';
+import * as moviesFetch from '../../moviesFetch';
+import MoviesCast from '../Cast/Cast';
+import MoviesReviews from '../Reviews/Reviews';
 
 export default function MovieDetailsView() {
     const { url } = useRouteMatch();
@@ -17,7 +17,7 @@ export default function MovieDetailsView() {
     // const genres = movie.map(item => item.genres.name);
     // console.log(genres);
 
-    // console.log(movie);
+    console.log(movie);
 
     return (
         <div className="container">
@@ -36,7 +36,7 @@ export default function MovieDetailsView() {
                     <p>Genres</p>
                     <ul className="genres">
                         {movie.genres.map(item => (
-                            <li>
+                            <li key={item.id}>
                                 {item.name}
                             </li> 
                         )

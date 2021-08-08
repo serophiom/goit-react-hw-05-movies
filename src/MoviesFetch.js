@@ -7,7 +7,7 @@ export function fetchMoviesTrending () {
 
 export function fetchMoviesSearch (query) {
     return fetch(`https://api.themoviedb.org/3/search/movie?api_key=${ApiKey}&language=en-US&query=${query}&page=1&include_adult=false`)
-    .then(response => response.results.json());
+    .then(response => response.json());
 }
 
 export function fetchMoviesFullInfo (movieid) {

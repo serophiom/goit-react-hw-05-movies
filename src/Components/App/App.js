@@ -1,40 +1,33 @@
-// import React from "react";
+import React from "react";
 import { Switch, Route } from "react-router-dom";
 // import { useState, useEffect } from 'react';
 import AppBar from '../AppBar/AppBar';
-import HomeView from "../../views/HomeView";
-import MoviesView from "../../views/MoviesView";
-import NotFoundView from "../../views/NotFoundView";
-import MovieDetailsView from "../../views/MovieDetailsView";
-// import Searchbar from '../Searchbar/Searchbar';
-// import FetchSearch from '../../FetchSearch';
-// import ImageGallery from '../ImageGallery/ImageGallery';
-// import Button from '../Button/Button';
-// import LoaderOfImages from '../Loader/Loader';
-// import Modal from '../Modal/Modal';
-// import './App.css';
-// import { ToastContainer } from 'react-toastify';
+import HomePage from "../HomePage/HomePage";
+import MoviesPage from "../MoviesPage/MoviesPage";
+import NotFoundPage from "../NotFoundPage/NotFoundPage";
+import MovieDetailsPage from "../MovieDetailsPage/MovieDetailsPage";
 
 export default function App () {
+
   return (
     <>
     <AppBar />
     
     <Switch>
       <Route path="/" exact>
-      <HomeView />
+      <HomePage />
       </Route>
 
       <Route path="/movies" exact>
-        <MoviesView />
+        <MoviesPage />
       </Route>
         
       <Route path="/movies/:movieId">
-        <MovieDetailsView />
+        <MovieDetailsPage />
       </Route>
 
       <Route>
-        <NotFoundView />
+        <NotFoundPage />
       </Route>
     </Switch>
     </>
