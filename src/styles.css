@@ -23,12 +23,57 @@ html {
   }
   
   img {
+    width: 300px;
+    padding: 0;
+    margin: 0;
     display: block;
     max-width: 100%;
     height: auto;
   }
 
   .container {
+    /* width: 1024px; */
+
     text-align: left;
     padding-left: 20px;
+  }
+
+  .movie-card {
+    display: flex;
+  }
+
+  .img-card {
+    /* width: 1000px; */
+    margin-right: 15px;
+  }
+
+  .movie-header {
+    display: none;
+  }
+
+  .movie-reviews p {
+    padding: 0;
+    margin: 0;
+  }
+
+  .genres {
+    display: flex;
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .genres li {
+    margin-right: 10px;
+  }
+
+  .actors-card {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .actors-card img{
+    width: 100px;
   }
