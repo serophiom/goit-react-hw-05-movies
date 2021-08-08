@@ -5,6 +5,7 @@ import AppBar from '../AppBar/AppBar';
 import HomeView from "../../views/HomeView";
 import MoviesView from "../../views/MoviesView";
 import NotFoundView from "../../views/NotFoundView";
+import MovieDetailsView from "../../views/MovieDetailsView";
 // import Searchbar from '../Searchbar/Searchbar';
 // import FetchSearch from '../../FetchSearch';
 // import ImageGallery from '../ImageGallery/ImageGallery';
@@ -24,8 +25,12 @@ export default function App () {
       <HomeView />
       </Route>
 
-      <Route path="/movies">
+      <Route path="/movies" exact>
         <MoviesView />
+      </Route>
+        
+      <Route path="/movies/:movieId">
+        <MovieDetailsView />
       </Route>
 
       <Route>
