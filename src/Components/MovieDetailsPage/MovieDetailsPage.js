@@ -3,6 +3,7 @@ import { useParams, Link, useRouteMatch, Route } from "react-router-dom";
 import * as moviesFetch from '../../moviesFetch';
 import MoviesCast from '../Cast/Cast';
 import MoviesReviews from '../Reviews/Reviews';
+import './MovieDetailsPage.css';
 
 export default function MovieDetailsView() {
     const { url } = useRouteMatch();
@@ -13,9 +14,6 @@ export default function MovieDetailsView() {
     useEffect(() => {
         moviesFetch.fetchMoviesFullInfo(movieId).then(setMovie);
     }, [movieId]);
-    
-    // const genres = movie.map(item => item.genres.name);
-    // console.log(genres);
 
     console.log(movie);
 
@@ -49,8 +47,8 @@ export default function MovieDetailsView() {
             </div>
             <div className="movie-reviews">
                 <p>Aditional information</p>
-                <p><Link to={`${url}/cast`}>Cast</Link></p>
-                <p><Link to={`${url}/reviews`}>Reviews</Link></p>
+                <p className="cast-link"><Link to={`${url}/cast`}>Cast</Link></p>
+                <p className="reviews-link"><Link to={`${url}/reviews`}>Reviews</Link></p>
 
                 <Route path="/movies/:moviesId/cast">
                     <MoviesCast />

@@ -13,13 +13,13 @@ export default function HomeView() {
     console.log(movies)
     return (
         <div className="container">
-        <h1>Trending today</h1>
-        <ul>
-            {movies && movies.map(movie =>
-            <li key={movie.id}>
-                <Link to={`/movies/${movie.id}`}>{movie.title}{movie.name}</Link></li>
-            )}
-        </ul>
+            <h1>Trending today</h1>
+            <ul>
+             {movies && movies.map(movie =>
+                <li key={movie.id}>
+                    <Link to={`/movies/${movie.id}`}>{movie.title}{movie.name}</Link></li>
+                )}
+            </ul>
         </div>
     )
 }
