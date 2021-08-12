@@ -43,21 +43,12 @@
 }
 
 .btn-back {
+    display: flex;
+    align-items: center;
     margin-bottom: 10px;
-    align-content: space-between;
-    text-align: center;
-    justify-content: center;
-
 }
 
 .span-back {
     padding: 0;
     margin-left: 3px;
-}
-
-.arrow {
-    padding-top: 2px;
-    align-content: space-between;
-    text-align: center;
-    justify-content: center;
 }

@@ -5,22 +5,25 @@ import './Reviews.css';
 
 export default function MoviesCast() {
     const [reviews, setReviews] = useState(null);
+    const [error, setError] = useState(null);
 
     const { moviesId } = useParams();
    
     useEffect(() => {
-        moviesFetch.fetchMoviesReviews(moviesId).then(response => setReviews(response.results)); 
+        moviesFetch.fetchMoviesReviews(moviesId)
+        .then(response => {
+            if (response.results.length === 0) {
+                setError('We don`t have any reviews for this movie.');
+                return;
+            } 
+        setReviews(response.results)}); 
     }, [moviesId])
 
 
 
     return (
         <div>
-            {/* {if (reviews === null) {
-                <p>We don't have any reviews</p>
-            }} */}
-            
-
+            <p>{error}</p>
             <ul className="reviews-card">
             {reviews && reviews.map(review =>
             <li key={review.id}>

@@ -43,16 +43,20 @@ export default function MovieDetailsView() {
                     <p>User Score {movie.popularity}%</p>
                     <p>Overview</p>
                     <p>{movie.overview}</p>
-                    <p>Genres</p>
-                    <ul className="genres">
+                    {movie.genres.length > 0 && (
+                        <>
+                        <p>Genres</p>
+                        <ul className="genres">
                         {movie.genres.map(item => (
                             <li key={item.id}>
                                 {item.name}
                             </li> 
-                        )
-                            
+                        )   
                         )}
-                    </ul>
+                        </ul>
+                        </>
+                    )}
+                    
                 </div> 
                
                 </>}
