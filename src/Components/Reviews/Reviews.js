@@ -12,8 +12,15 @@ export default function MoviesCast() {
         moviesFetch.fetchMoviesReviews(moviesId).then(response => setReviews(response.results)); 
     }, [moviesId])
 
+
+
     return (
-        <div >
+        <div>
+            {/* {if (reviews === null) {
+                <p>We don't have any reviews</p>
+            }} */}
+            
+
             <ul className="reviews-card">
             {reviews && reviews.map(review =>
             <li key={review.id}>

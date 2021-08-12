@@ -1,4 +1,63 @@
+.movie-header {
+    display: none;
+  }
+
+.movie-reviews p {
+    padding: 0;
+    margin: 0;
+  }
+
+.genres {
+    display: flex;
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+.genres li {
+    margin-right: 10px;
+  }
+
+  .movie-card {
+    display: flex;
+  }
+
+  .img-card {
+    margin-right: 15px;
+  }
+
+.actors-card {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+.actors-card img{
+    width: 100px;
+  }
+
 .reviews-link,
 .cast-link {
     margin-bottom: 10px;
+}
+
+.btn-back {
+    margin-bottom: 10px;
+    align-content: space-between;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.span-back {
+    padding: 0;
+    margin-left: 3px;
+}
+
+.arrow {
+    padding-top: 2px;
+    align-content: space-between;
+    text-align: center;
+    justify-content: center;
 }

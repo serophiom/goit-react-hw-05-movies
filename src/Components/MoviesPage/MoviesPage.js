@@ -18,8 +18,6 @@ export default function MoviesView () {
         moviesFetch.fetchMoviesSearch(movieName).then(response => setSearchResult(response.results));
     }, [movieName]);
 
-    
-
     const handleSearchSubmit = imageName => {
         setMovieName(imageName);
         if (movieName.trim() === '') {
@@ -33,9 +31,6 @@ export default function MoviesView () {
         setMovieName([]);
         setSearchResult(null);
       };
- 
-    console.log(movieName);
-    console.log(searchResult);
 
     return (
         <div className="container">

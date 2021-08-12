@@ -1,17 +1,18 @@
-import React from "react";
+import { lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
-import AppBar from '../AppBar/AppBar';
-import HomePage from "../HomePage/HomePage";
-import MoviesPage from "../MoviesPage/MoviesPage";
-import NotFoundPage from "../NotFoundPage/NotFoundPage";
-import MovieDetailsPage from "../MovieDetailsPage/MovieDetailsPage";
+
+const AppBar = lazy(() => import('../AppBar/AppBar.js'));
+const HomePage = lazy(() => import('../HomePage/HomePage.js'));
+const MoviesPage = lazy(() => import('../MoviesPage/MoviesPage.js'));
+const NotFoundPage = lazy(() => import('../NotFoundPage/NotFoundPage.js'));
+const MovieDetailsPage = lazy(() => import('../MovieDetailsPage/MovieDetailsPage.js'));
 
 export default function App () {
 
   return (
     <>
+    <Suspense fallback={<div>Loading...</div>}>
     <AppBar />
-    
     <Switch>
       <Route path="/" exact>
       <HomePage />
@@ -29,6 +30,7 @@ export default function App () {
         <NotFoundPage />
       </Route>
     </Switch>
+    </Suspense>
     </>
   )
 };

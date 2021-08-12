@@ -9,8 +9,7 @@ export default function HomeView() {
     useEffect(() => {
         moviesFetch.fetchMoviesTrending().then(response => setMovies(response.results)); 
     }, [])
-    
-    console.log(movies)
+
     return (
         <div className="container">
             <h1>Trending today</h1>
