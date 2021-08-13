@@ -2,7 +2,6 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import * as moviesFetch from '../../moviesFetch';
 import SearchBar from '../SearchBar/SearchBar';
-// import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -20,7 +19,7 @@ export default function MoviesView () {
         const movieQuery = new URLSearchParams(location.search).get('movie');
         setMovieName(movieQuery);
       }, [location.search]);
-    
+
 
     useEffect (() => {
         if (movieName === '') {
@@ -30,15 +29,15 @@ export default function MoviesView () {
         moviesFetch.fetchMoviesSearch(movieName).then(response => setSearchResult(response.results));
     }, [movieName]);
 
-    const handleSearchSubmit = (imageName) => {
-        setMovieName(imageName);
-        if (movieName.trim() === '') {
+    const handleSearchSubmit = (searchQuery) => {
+        setMovieName(searchQuery);
+        if (searchQuery.trim() === '') {
             toast.error('Enter the image name');
                 return;
             }
             reset();
 
-            history.push({ ...location, search: `movie=${setMovieName}` })
+            history.push({ ...location, search: `movie=${searchQuery}` });
     };
 
     const reset = () => {
@@ -53,10 +52,13 @@ export default function MoviesView () {
             <ul>
             {searchResult && searchResult.map(result =>
             <li key={result.id}>
-                 <Link to={`/movies/${result.id}`}>{result.title}{result.name}</Link></li>
+                 <Link to={{
+                     pathname:`/movies/${result.id}`,
+                     state: {from: location},
+                    }}>
+                    {result.title}{result.name}</Link></li>
             )}
             </ul> 
         </div>
         );
-
 }
