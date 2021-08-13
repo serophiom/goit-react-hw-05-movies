@@ -1,7 +1,4 @@
 import { useState } from 'react';
-// import PropTypes from 'prop-types';
-// import { toast, Zoom } from 'react-toastify';
-// import styles from './Searchbar.module.scss';
 
 const Searchbar = ({ onSubmit }) => {
   const [movieName, setMovieName] = useState('');
