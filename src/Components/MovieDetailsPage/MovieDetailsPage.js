@@ -63,8 +63,25 @@ export default function MovieDetailsView() {
             </div>
             <div className="movie-reviews">
                 <p>Aditional information</p>
-                <p className="cast-link"><Link to={`${url}/cast`}>Cast</Link></p>
-                <p className="reviews-link"><Link to={`${url}/reviews`}>Reviews</Link></p>
+                <p className="cast-link">
+                    <Link to={{
+                        pathname: `${url}/cast`,
+                        state: {
+                            from: location.state ? location.state.from : '/',
+                        },
+                        }}>
+                        Cast
+                    </Link>
+                </p>
+                <p className="reviews-link">
+                    <Link to={{
+                        pathname: `${url}/reviews`,
+                            state: {
+                            from: location.state ? location.state.from : '/',
+                            },
+                        }}>
+                        Reviews
+                    </Link></p>
                 <Suspense fallback={<div>Loading...</div>}>
                     <Route path="/movies/:moviesId/cast">
                         <MoviesCast />

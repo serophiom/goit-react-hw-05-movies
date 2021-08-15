@@ -11,26 +11,26 @@ export default function App () {
 
   return (
     <>
-    <Suspense fallback={<div>Loading...</div>}>
-    <AppBar />
-    <Switch>
-      <Route path="/" exact>
-      <HomePage />
-      </Route>
+      <Suspense fallback={<div>Loading...</div>}>
+        <AppBar />
+        <Switch>
+          <Route path="/" exact>
+            <HomePage />
+          </Route>
 
-      <Route path="/movies" exact>
-        <MoviesPage />
-      </Route>
+          <Route path="/movies" exact>
+            <MoviesPage />
+          </Route>
         
-      <Route path="/movies/:movieId">
-        <MovieDetailsPage />
-      </Route>
+          <Route path="/movies/:movieId">
+            <MovieDetailsPage />
+          </Route>
 
-      <Route>
-        <NotFoundPage />
-      </Route>
-    </Switch>
-    </Suspense>
+          <Route>
+            <NotFoundPage />
+          </Route>
+        </Switch>
+      </Suspense>
     </>
   )
 };

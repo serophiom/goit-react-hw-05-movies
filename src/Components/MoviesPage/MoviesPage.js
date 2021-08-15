@@ -41,7 +41,6 @@ export default function MoviesView () {
     };
 
     const reset = () => {
-        setMovieName([]);
         setSearchResult(null);
       };
 

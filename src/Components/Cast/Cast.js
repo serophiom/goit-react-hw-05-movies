@@ -18,6 +18,8 @@ export default function MoviesCast() {
                 }
             setActors(response.cast)}); 
     }, [moviesId])
+
+    
     return (
         <ul className="actors-card">
             <p>{error}</p>
